@@ -1,0 +1,40 @@
+﻿{
+    "probe":  "Append second record, promote the branch, and generate digest.",
+    "branch_id":  "b001",
+    "decision":  "promote",
+    "hypothesis":  "The v1 helper is ready if repeated finish-round updates ledger, frontier, and digest.",
+    "actions":  [
+                    {
+                        "summary":  "finish-round second record",
+                        "result":  "record accepted and score computed",
+                        "kind":  "test"
+                    }
+                ],
+    "scores":  {
+                   "novelty":  2,
+                   "cost":  1,
+                   "evidence":  5,
+                   "risk":  1,
+                   "promise":  5
+               },
+    "reflection":  "The v1 ledger path works across repeated rounds; next useful lane is skill sync and parity validation.",
+    "skills_used":  [
+                        "codex-exploration-loop"
+                    ],
+    "next_probe":  "Sync skill bundle to storage repo and validate parity.",
+    "evidence":  [
+                     {
+                         "path_or_url":  "experiments/2026-06-24-codex-exploration-loop-v1-smoke\\ledger.jsonl",
+                         "supports":  "ledger contains at least one prior record and accepts a second record",
+                         "confidence":  "high"
+                     }
+                 ],
+    "network_used":  false,
+    "subagents_used":  [
+
+                       ],
+    "files_touched":  [
+
+                      ],
+    "round":  2
+}

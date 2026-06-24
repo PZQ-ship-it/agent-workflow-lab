@@ -1,0 +1,19 @@
+{
+  "active": [],
+  "branches": {
+    "b001": {
+      "status": "promoted",
+      "hypothesis": "The v1 helper is ready if repeated finish-round updates ledger, frontier, and digest.",
+      "last_score": 3.05,
+      "rounds": [
+        1,
+        2
+      ],
+      "recent_reflections": [
+        "The state skeleton is present; next probe should ensure repeated records update frontier and digest.",
+        "The v1 ledger path works across repeated rounds; next useful lane is skill sync and parity validation."
+      ],
+      "next_probe": "Sync skill bundle to storage repo and validate parity."
+    }
+  }
+}

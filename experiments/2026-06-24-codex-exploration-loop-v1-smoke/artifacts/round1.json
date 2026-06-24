@@ -1,0 +1,40 @@
+﻿{
+    "probe":  "Inspect generated run files and finish a schema-shaped record.",
+    "branch_id":  "b001",
+    "decision":  "continue",
+    "hypothesis":  "The v1 helper can keep durable state if init/start/finish update separate files.",
+    "actions":  [
+                    {
+                        "summary":  "inspected generated brief/frontier files",
+                        "result":  "run directory contains brief, ledger, frontier, branch, artifacts",
+                        "kind":  "read"
+                    }
+                ],
+    "scores":  {
+                   "novelty":  2,
+                   "cost":  1,
+                   "evidence":  4,
+                   "risk":  1,
+                   "promise":  4
+               },
+    "reflection":  "The state skeleton is present; next probe should ensure repeated records update frontier and digest.",
+    "skills_used":  [
+                        "codex-exploration-loop"
+                    ],
+    "next_probe":  "Append a second round and generate digest.",
+    "evidence":  [
+                     {
+                         "path_or_url":  "experiments/2026-06-24-codex-exploration-loop-v1-smoke\\frontier.json",
+                         "supports":  "frontier initialized with branch b001",
+                         "confidence":  "high"
+                     }
+                 ],
+    "network_used":  false,
+    "subagents_used":  [
+
+                       ],
+    "files_touched":  [
+
+                      ],
+    "round":  1
+}
