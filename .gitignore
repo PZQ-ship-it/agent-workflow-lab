@@ -26,3 +26,6 @@ Thumbs.db
 tmp/
 scratch/
 artifacts/private/
+
+# Local crawl outputs may contain platform tokens, large excerpts, or noisy raw metadata.
+sources/raw/
