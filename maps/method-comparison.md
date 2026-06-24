@@ -3,6 +3,8 @@
 Status: draft
 Last updated: 2026-06-24
 
+Chinese version: [method-comparison.zh.md](method-comparison.zh.md)
+
 ## Purpose
 
 This note turns the first scouting pass into a working comparison map. It is meant to guide experiments: when a new pattern appears, classify what problem it solves, what evidence would prove it useful, and how it tends to fail.
