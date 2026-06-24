@@ -1,0 +1,9 @@
+{
+  "question": "Can v2.0 record runner failure through abort-round?",
+  "mode": "scout",
+  "max_rounds": 1,
+  "round_timebox_minutes": 1.0,
+  "root": "<agent-workflow-lab>",
+  "created_at": "2026-06-24T22:58:26+08:00",
+  "scratch_worktree": ""
+}

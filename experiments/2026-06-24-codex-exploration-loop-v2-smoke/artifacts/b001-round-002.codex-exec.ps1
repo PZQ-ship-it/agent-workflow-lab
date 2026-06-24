@@ -1,0 +1,21 @@
+$ErrorActionPreference = 'Stop'
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$promptPath = Join-Path $scriptDir 'b001-round-002.prompt.md'
+$schemaPath = Join-Path $scriptDir 'b001-round-002.schema.json'
+$resultPath = Join-Path $scriptDir 'b001-round-002.result.json'
+$eventsPath = Join-Path $scriptDir 'b001-round-002.events.jsonl'
+$prompt = Get-Content -Raw -Encoding UTF8 $promptPath
+$codexArgs = @(
+  'exec',
+  '--cd',
+  '<agent-workflow-lab>',
+  '--sandbox',
+  'workspace-write',
+  '--output-schema',
+  $schemaPath,
+  '--output-last-message',
+  $resultPath,
+  '--json',
+  '-'
+)
+$prompt | & codex @codexArgs 2>&1 | Tee-Object -FilePath $eventsPath

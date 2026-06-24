@@ -1,0 +1,14 @@
+{
+  "round": 2,
+  "branch_id": "b001",
+  "workspace": "<agent-workflow-lab>",
+  "sandbox": "workspace-write",
+  "profile": "",
+  "schema_path": "b001-round-002.schema.json",
+  "prompt_path": "b001-round-002.prompt.md",
+  "result_path": "b001-round-002.result.json",
+  "events_path": "b001-round-002.events.jsonl",
+  "script_path": "b001-round-002.codex-exec.ps1",
+  "portable": true,
+  "pending_started": true
+}

@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "rounds_attempted": 1,
+  "rounds_completed": 0,
+  "started_at": "2026-06-24T22:58:26+08:00",
+  "plan_version": "2.0",
+  "updated_at": "2026-06-24T22:58:26+08:00",
+  "reason": "max failures reached: 1",
+  "failures": 1,
+  "finished_at": "2026-06-24T22:58:26+08:00"
+}

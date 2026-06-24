@@ -1,0 +1,31 @@
+﻿{
+    "version":  "2.0",
+    "mode":  "mock",
+    "max_rounds":  2,
+    "round_timebox_minutes":  4,
+    "workspace":  "\u003cagent-workflow-lab\u003e",
+    "sandbox":  "workspace-write",
+    "profile":  "",
+    "portable":  true,
+    "stop_on_decisions":  [
+                              "promote",
+                              "stop"
+                          ],
+    "max_failures":  1,
+    "rounds":  [
+                   {
+                       "round":  1,
+                       "branch_id":  "b001",
+                       "mode":  "mock",
+                       "probe":  "Prepare a deterministic runner round and keep the branch active.",
+                       "mock_decision":  "continue"
+                   },
+                   {
+                       "round":  2,
+                       "branch_id":  "b001",
+                       "mode":  "mock",
+                       "probe":  "Verify the runner stops on a promoted lead after a second planned round.",
+                       "mock_decision":  "promote"
+                   }
+               ]
+}

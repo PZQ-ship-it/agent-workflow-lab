@@ -1,0 +1,40 @@
+{
+  "round": 2,
+  "branch_id": "b001",
+  "hypothesis": "Can v2.0 orchestrate multiple bounded exploration rounds through a runner plan without rebuilding Codex's agent loop?",
+  "probe": "Verify the runner stops on a promoted lead after a second planned round.",
+  "actions": [
+    {
+      "kind": "other",
+      "summary": "v2.0 runner mock",
+      "result": "Prepared a worker artifact and imported a deterministic schema-valid result."
+    }
+  ],
+  "network_used": false,
+  "skills_used": [
+    "codex-exploration-loop"
+  ],
+  "subagents_used": [],
+  "files_touched": [
+    "b001-round-002.prompt.md",
+    "b001-round-002.codex-exec.ps1",
+    "b001-round-002.result.json"
+  ],
+  "evidence": [
+    {
+      "path_or_url": "b001-round-002.codex-exec.ps1",
+      "supports": "The runner prepared a codex exec worker artifact for this round.",
+      "confidence": "high"
+    }
+  ],
+  "scores": {
+    "novelty": 3,
+    "promise": 4,
+    "evidence": 4,
+    "risk": 1,
+    "cost": 1
+  },
+  "reflection": "The v2.0 runner can orchestrate a bounded round without replacing Codex worker execution.",
+  "decision": "promote",
+  "next_probe": "Run the next planned branch or switch to external mode for a live codex exec worker."
+}

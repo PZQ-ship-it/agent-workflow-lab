@@ -1,0 +1,19 @@
+{
+  "active": [],
+  "branches": {
+    "b001": {
+      "status": "promoted",
+      "hypothesis": "Can v2.0 orchestrate multiple bounded exploration rounds through a runner plan without rebuilding Codex's agent loop?",
+      "last_score": 2.75,
+      "rounds": [
+        1,
+        2
+      ],
+      "recent_reflections": [
+        "The v2.0 runner can orchestrate a bounded round without replacing Codex worker execution.",
+        "The v2.0 runner can orchestrate a bounded round without replacing Codex worker execution."
+      ],
+      "next_probe": "Run the next planned branch or switch to external mode for a live codex exec worker."
+    }
+  }
+}
