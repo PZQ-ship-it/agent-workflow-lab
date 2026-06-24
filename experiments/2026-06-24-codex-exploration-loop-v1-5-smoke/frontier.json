@@ -1,0 +1,17 @@
+{
+  "active": [],
+  "branches": {
+    "b001": {
+      "status": "promoted",
+      "hypothesis": "v1.5 can prepare portable codex exec worker artifacts and import schema-backed results into the same exploration ledger.",
+      "last_score": 2.75,
+      "rounds": [
+        1
+      ],
+      "recent_reflections": [
+        "The v1.5 adapter closes the gap between manual ledger rounds and official codex exec workers while keeping public artifacts portable."
+      ],
+      "next_probe": "Forward-test one real codex exec worker in a disposable scratch workspace when model/runtime cost is acceptable."
+    }
+  }
+}

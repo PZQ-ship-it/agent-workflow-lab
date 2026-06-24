@@ -1,0 +1,14 @@
+{
+  "round": 1,
+  "branch_id": "b001",
+  "workspace": "<scratch-or-workspace>",
+  "sandbox": "workspace-write",
+  "profile": "",
+  "schema_path": "b001-round-001.schema.json",
+  "prompt_path": "b001-round-001.prompt.md",
+  "result_path": "b001-round-001.result.json",
+  "events_path": "b001-round-001.events.jsonl",
+  "script_path": "b001-round-001.codex-exec.ps1",
+  "portable": true,
+  "pending_started": true
+}
