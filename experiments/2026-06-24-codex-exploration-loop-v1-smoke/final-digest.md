@@ -1,4 +1,4 @@
-﻿# Exploration Digest
+# Exploration Digest
 
 - Run dir: experiments/2026-06-24-codex-exploration-loop-v1-smoke
 - Records: 2
