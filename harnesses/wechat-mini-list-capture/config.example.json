@@ -1,0 +1,47 @@
+{
+  "driver": "desktop",
+  "adb": {
+    "path": "adb",
+    "serial": null
+  },
+  "runtime_dir": "../../runtime/wechat-mini-list-capture",
+  "save_screenshots": true,
+  "privacy_note": "Raw screenshots/OCR stay in ignored runtime. Do not commit.",
+  "lists": [
+    {
+      "id": "list_a",
+      "name": "List A",
+      "entry_point": null,
+      "list_region": null,
+      "detail_region": null,
+      "row_slots": []
+    },
+    {
+      "id": "list_b",
+      "name": "List B",
+      "entry_point": null,
+      "list_region": null,
+      "detail_region": null,
+      "row_slots": []
+    }
+  ],
+  "automation": {
+    "settle_ms": 900,
+    "list_scroll_clicks": -5,
+    "detail_scroll_clicks": -5,
+    "detail_max_scroll_rounds": 18,
+    "no_new_item_rounds": 3,
+    "no_new_detail_rounds": 2,
+    "max_items_per_list": null,
+    "back_method": "hotkey:alt,left"
+  },
+  "ocr": {
+    "engine": "auto",
+    "min_score": 0.35,
+    "min_row_chars": 3,
+    "item_gap_px": 42
+  },
+  "review": {
+    "excerpt_chars": 600
+  }
+}
