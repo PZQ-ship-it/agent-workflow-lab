@@ -1,7 +1,7 @@
 # Web-Retrieved Reference Mode for `quality-judge`
 
 Date: 2026-07-17
-Status: design draft; no runtime behavior changed
+Status: implemented as `quality-judge` schema 1.2; human-labeled promotion pilot remains pending
 
 ## Research Spec
 
@@ -293,3 +293,52 @@ The first pilot should compare three modes on the same artifacts:
 Measure pairwise accuracy against human labels, Cohen's kappa, rank correlation, false-accept rate, position-flip rate, verbosity sensitivity, confidence coverage, and per-task failure slices. The proposed pilot starting default is at least 20 paired artifact instances per task stratum; it is not a claim of statistical sufficiency. Run a power analysis or simulation against the target false-accept upper bound and expected task strata before freezing the final sample size. Resample paired artifact instances rather than correlated judge calls. Sample size, task strata, trial count, paired-bootstrap procedure, confidence level, Holm correction, thresholds, and non-inferiority margins must be frozen before the pilot; they should not be selected after observing the results.
 
 Until that pilot passes, the recommended implementation decision is: **build `retrieved_provisional` as an opt-in evidence mode, not as a replacement for the human-anchored blocking gate.**
+
+## 2026-07-17 Schema 1.2 Implementation Addendum
+
+The earlier schema 1.1 sections remain the research history. Schema 1.2
+supersedes them where this addendum differs.
+
+The user confirmed four refinements after reviewing the initial implementation:
+
+1. The task contract is the normative source for gating dimensions. Human or
+   retrieved examples may audit and refine the rubric, but a
+   retrieved-example-only dimension cannot gate.
+2. Ordinary-quality references are useful as low or boundary calibration
+   anchors. They never lower the task-derived absolute quality floor and do not
+   become an outperformance threshold.
+3. Prefer a 3-5 item low/boundary/high few-shot panel. One-shot remains a
+   degraded diagnostic. Score bands must record provenance and pass a monotonic
+   ordering check.
+4. The quality lane owns soft quality only. Required artifacts, schema,
+   factual/citation verification, safety, tests, and reproducibility remain in
+   the structural lane. Hard issues noticed by the quality lane are handed off
+   without a second score penalty.
+
+Implementation separates two reference roles:
+
+- `calibration_anchor`: calibrates scale and may trigger revision;
+- `challenge_frontier`: must be high-band, `retrieved_verified`,
+  hard-comparable, and not `self_labeled` before it can produce
+  `provisional_outperforms_retrieved`.
+
+The deterministic gate now applies the absolute contract before any relative
+comparison. An anchor-only run emits `anchored_diagnostic` instead of claiming
+outperformance. Schema 1.1 retrieved runs remain supported.
+
+Validation evidence:
+
+- Python 3.7 compile and 33/33 regression tests passed in global and maintained
+  copies;
+- both copies passed the Codex skill validator and matched across 18 files by
+  SHA-256;
+- a fresh native forward test froze a task-derived five-dimension rubric,
+  bounded public retrieval, recorded selector timeout as `retrieval.failed`,
+  still ran mutually blind structural and quality lanes, and produced a valid
+  deterministic `blocked` result from the structural failure rather than
+  suppressing the quality score;
+- maintained skills repository commit: `8dfce67`.
+
+This implementation remains provisional evidence infrastructure. It does not
+replace the human-labeled pilot or make retrieved anchors equivalent to human
+calibration.
